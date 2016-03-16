@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html data-ng-app ="remWeld">
+    <head>
+        <title>Remote Welder</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script/lib/JogDial.js-master/jogDial.js" type="text/javascript"></script>
+        <script src="script/lib/angular.js" type="text/javascript"></script>
+        <script src="script/lib/jQuery/jQuery.js" type="text/javascript"></script>
+        <script src="script/lib/jQuery/jQueryMobile.js" type="text/javascript"></script>
+        <link href="style/general.css" rel="stylesheet" type="text/css"/>
+        <link href="style/remWeld.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body data-ng-controller="remWeldcontroller">
+        <h1>Remote Welder client</h1>
+        <div id="voltageDivContainer">
+            <p>Voltage: {{voltage}} {{measure}}</p>
+            <div id="voltageDialDiv">
+            </div>
+        </div>
+        <div id="configSection">
+            <p>Choose Port #:</p>
+            <div ng-repeat ="port in ports">
+                <label>{{port.name}}<input ng-checked="isWelderChecked($index)" class="chooseWelderRadio" type="radio" name="port" ng-click="chooseWelder($index)"> {{port.portNo}}</label><br>
+            </div>
+            <input id="chooseWelder" type="button" class="hide" ng-value="chosenWelder" ng-click="submitToWelder()"/>
+            <p id="sentMessage" class="hide">Sent</p>
+        </div>
+        <script src="script/remWeldService.js" type="text/javascript"></script>
+        <script src="script/remWeldConfig.js" type="text/javascript"></script>
+        <script src="script/remWeldController.js" type="text/javascript"></script>
+        <script src="script/remWeldData.js" type="text/javascript"></script>
+        <script src="script/remWeldDom.js" type="text/javascript"></script>
+        <script src="script/remWeldIo.js" type="text/javascript"></script>
+        <script src="script/remWeld.js" type="text/javascript"></script>
+        
+    </body>
+</html>

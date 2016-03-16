@@ -1,0 +1,18 @@
+#voltageDialDiv {
+    width: 200px;
+    height: 200px;
+    top:10px;
+}
+
+#voltageDialDiv_knob {
+
+}
+
+#configSection{
+    
+}
+
+.ui-loader-default{
+    display:none;
+}
+
